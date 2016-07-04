@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Sat Jul 11 13:45:09 EDT 2015
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=true
+jarname=/Users/Jackie/Documents/Challenge & Program/TeachingSystem/SmartNote.jar
+manifest.mergeall=true
+manifest.mainclass=MainPaint
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=
+includes=

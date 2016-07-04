@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html ng-app="app">
+        <head>
+            <title>Tiny Url</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+            <link href="css/tinyUrlStyle.css" rel="stylesheet">
+        </head>
+        
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">                
+                 <div class="navbar-header">    
+                </div>
+            </div>
+        </nav>
+        
+        
+        <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-xs-12 col-sm-8 col-sm-push-2">
+                    <h1>Tiny Url</h1>
+                    <p style="padding:60px;"></p>
+                </div>
+            </div>
+        </div>
+        </header>
+        
+        <div id="container" class="container">
+            <% if (success) { %>
+            <div class="alert alert-success">
+                <%= success %>
+            </div>
+            <% } %>
+            <% if (error) { %>
+            <div class="alert alert-danger">
+                <%= error %>
+            </div>
+            <% } %>
+            <%- body %>
+            <hr />
+        </div>
+        
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="/javascripts/jquery-1.10.2.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="/javascripts/bootstrap.min.js"></script>
+<!--            <script src="/jquery/dist/jquery.min.js"></script>-->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        </body>
+      
+    </html>

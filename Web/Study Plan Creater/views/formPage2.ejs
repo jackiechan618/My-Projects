@@ -1,0 +1,225 @@
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">                
+                     <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <a class="navbar-brand" ui-sref="index"><img src="image/logo.png" height=20 width=20></a>       
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/formPage1"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Page1</a></li>
+                        <li class="active"><a href="/formPage2"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Page2</a></li>
+                        <li><a href="/formPage3"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Page3</a></li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
+
+    <div>
+        <span style="font-size:16px; font-weight:bold;">Welcome: <%= session.user.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>
+        <a class="btn btn-danger btn-large" href="/userPasswordModify">Modify Password</a>
+        &nbsp;&nbsp;
+        <a class="btn btn-danger btn-large" href="/logout">Logout</a>
+    </div>
+
+
+    <div ng-controller="courseCtrl" >
+        <div class="row row-content">
+            <div class="col-xs-12">
+                
+                <h1>Personal Information</h1>
+                <p style="padding:10px;"></p>
+                <table class="table table-striped table-hover">
+                    <tr>                       
+                        <th>First Name:</th>         
+                        <td>{{firstName}}</td>   
+                        <th>Last Name:</th>
+                        <td>{{lastName}}</td>
+                    </tr>
+                    <tr>
+                        <th>Student ID:</th>         
+                        <td>{{sId}}</td>           
+                        <th>Email:</th>
+                        <td>{{Email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Department:</th>         
+                        <td>{{Dept}}</td>           
+                        <th>Major:</th>
+                        <td>{{Major}}</td>
+                    </tr>
+                    <tr>
+                        <th>Concentration:</th>         
+                        <td>{{Concentration}}</td>           
+                        <th>Name of Degree:</th>
+                        <td>{{Degree}}</td>
+                    </tr>
+                    <tr>
+                        <th>Graduation Year:</th>         
+                        <td>{{gYear}}</td>           
+                        <th>Graduation Term:</th>
+                        <td>{{gTerm}}</td>
+                    </tr>
+                    <tr>
+                        <th>Applying for O.P.T.:</th>         
+                        <td>{{Opt}}</td>           
+                    </tr>
+                </table>
+            </div>
+        </div>
+                
+                <p style="padding:10px;"></p>
+         <div class="row row-content">
+            <div class="col-xs-12">
+                
+                <form action="" method="post">
+                    <h1 class="page-header">Course Information</h1>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label> Choose the major: </label>
+                                <select ng-model="filterMajor" class="form-control"
+                                        ng-options="act for act in majors">               
+                                </select>
+                                 <p style="padding:5px;"></p>
+                                <a class="btn btn-primary" ng-click="majorSelect()">Choose Major</a>
+                            </div>
+                        </div>
+        
+                        <p style="padding:30px;"></p>
+                        
+                        <div class="row">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label> Choose the course: </label>
+                                <select ng-model="studyInfo" class="form-control"
+                                        ng-options="info.course for info in selectCourseList">        
+                                </select>
+                            </div>
+                       
+                            <div class="col-md-4">
+                                <label>The year you will take</label>
+                                <div>
+                                    <select ng-model="courseYear" class="form-control"
+                                        ng-options="cYear for cYear in courseYearList">               
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p style="padding:30px;"></p>    
+                        
+                        <div class="row">
+                            <div class="col-md-4">                       
+                                <label>The term you will take</label>
+                                <label class="radio inline">
+                                    <input type="radio" name="courseTerm" id="courseTerm1" value="Spring" checked ng-model="courseTerm">Spring
+                                </label>
+                                <label class="radio inline">
+                                    <input type="radio" name="courseTerm" id="courseTerm2" value="Summer" ng-model="courseTerm">Summer
+                                </label>
+                                <label class="radio inline">
+                                    <input type="radio" name="courseTerm" id="courseTerm3"  value="Fall" ng-model="courseTerm">Fall
+                                </label>     
+                            </div>
+                            
+                            <div class="col-md-4">                       
+                                <label>The type of the course</label>
+                                <label class="radio inline">
+                                    <input type="radio" name="courseType" id="courseType1" value="CoreCourse" checked ng-model="courseType">Core Course
+                                </label>
+                                <label class="radio inline">
+                                    <input type="radio" name="courseType" id="courseType2" value="Electives" ng-model="courseType">Electives 
+                                </label>
+                                <label class="radio inline">
+                                    <input type="radio" name="courseType" id="courseType3"  value="NonCredit" ng-model="courseType">No Credit
+                                </label>     
+                            </div>
+                        </div>
+                            
+                            <p style="padding:5px;"></p>
+                            <div class="col-md-4">
+                                <a class="btn btn-primary" ng-click="addCourse()">Add Course</a>
+                            </div>
+                        </div>
+        
+                        <p style="padding:10px;"></p>        
+        
+                    </div>
+                </form>
+             </div>
+        </div>
+    
+        <p style="padding:10px;"></p>
+        
+        <div class="row row-content">
+            <div class="col-xs-12">
+                
+                <form action="/formPage3" method="get">
+                    <h2>Courses You Have Chosen</h2>
+                    <p style="padding:5px;"></p>
+                    <span style="font-size:20px; font-weight:bold; color:red">Graduation Requirements: no less than 10 courses (30 credits)</span>
+                    <p style="padding:20px;"></p>
+                  
+                    <div class="row">                    
+                    <div class="col-xs-12 col-sm-8 col-lg-8">
+                        <table ng-table="tableParams" class="table table-striped table-hover">
+                        <tr ng-repeat="course in userCourseList_display">
+                            <th>{{ course.courseTime }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            <td>{{ course.courseName }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="deleteCourse(course)">Delete</a></td>
+                        </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-4 col-lg-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">       
+                                <h3 class="panel-title">Number of Courses You have chosen</h3>
+                            </div>
+                            <div class="panel-body">          
+                                <dl class="dl-horizontal">    
+                                    <dt>Core Course: </dt>         
+                                    <dd>{{coreCourseNumber}}</dd> 
+                                    <dt>Core Course Credit: </dt>         
+                                    <dd>{{coreCourseCredit}}</dd> 
+                                    
+                                    <dt>Electives Course: </dt>
+                                    <dd>{{ElectivesNumber}}</dd>
+                                    <dt>Electives Credit: </dt>
+                                    <dd>{{ElectivesCredit}}</dd>
+                                    
+                                    <dt>No Credit Course: </dt>
+                                    <dd>{{noCreditNumber}}</dd>
+                                    
+                                    <dt>Total Course: </dt>
+                                    <dd>{{totalCourseNumber}}</dd>
+                                    <dt>Total Credits: </dt>
+                                    <dd>{{totalCreditNumber}}</dd>
+                                </dl>
+                            </div>
+                        </div>    
+                    </div>
+                    </div>
+                    
+                    <p style="padding:30px;"></p>
+                    
+                    <div class="row">
+                        <button class="btn btn-primary btn-lg" ng-click="courseListSubmit()">Create Study Plan</button>
+                    </div>
+        
+                    <p style="padding:10px;"></p>
+                </form>
+                <p style="padding:20px;"></p>
+                <h3 style="font-size:16px; font-weight:bold;">Page2</h3>
+            </div>
+        </div>
+
+
+
+

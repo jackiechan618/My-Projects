@@ -1,0 +1,194 @@
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">                
+                     <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <a class="navbar-brand" ui-sref="index"><img src="image/logo.png" height=20 width=20></a>       
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/formPage1"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Page1</a></li>
+                        <li><a href="/formPage2"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Page2</a></li>
+                        <li><a href="/formPage3"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Page3</a></li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
+
+            <div>
+                <span style="font-size:16px; font-weight:bold;">Welcome: <%= session.user.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>
+                <a class="btn btn-danger btn-large" href="/userPasswordModify">Modify Password</a>
+                &nbsp;&nbsp;
+                <a class="btn btn-danger btn-large" href="/logout">Logout</a>
+            </div>
+
+            <div ng-controller="formPage1Ctrl">
+                <div class="row row-content">
+                    <div class="col-xs-12 col-sm-10">
+                        <form action="" method="post">
+                            <h1 class="page-header">Peronal Information</h1>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="caption">
+                                            <label>First Name:</label>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="John"
+                                               name="firstName" ng-model="firstName">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="caption">
+                                            <label>Last Name:</label>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Doe"
+                                               name="lastName" ng-model="lastName">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="caption">
+                                            <label>Student ID:</label>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="123456789"
+                                               name="sId" ng-model="sId">
+                                    </div>
+                                </div>
+
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <div class="caption">
+                                        <label>Email:</label>
+                                    </div>
+                                    <input type="email" class="form-control" placeholder="John123@stevens.edu" name="Email" ng-model="Email">
+                                </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="caption">
+                                            <label>Department:</label>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="EE"
+                                               name="Dept" ng-model="Dept">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="caption">
+                                            <label>Major:</label>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="EE"
+                                               name="Major" ng-model="Major">
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="caption">
+                                            <label>Concentration:</label>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="..."
+                                               name="Concentration" ng-model="Concentration">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="caption">
+                                           <label>Graduation Year:</label>
+                                        </div>
+                                        <div class="col-xs-1">
+                                            <label for="gYear" class="control-label"> 20 </label>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <input type="text" class="form-control" placeholder="16" name="gYear" ng-model="gYear">
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>                                                      
+                        
+                            <p style="padding:10px;"></p>
+                            
+                            <div class="row">    
+                                <div class="col-lg-4">
+                                    <label>International Students: Applying for O.P.T.?</label>
+                                    <label class="radio inline">
+                                        <input type="radio" name="Opt" id="opt1" value="Yes" checked ng-model="Opt">Yes
+                                    </label>
+                                    <label class="radio inline">
+                                        <input type="radio" name="Opt" id="opt2" value="No" ng-model="Opt">No
+                                    </label>
+                                </div> 
+                                
+                                <div class="col-lg-4">
+                                    <label>Graduation Term:</label>
+                                    <label class="radio inline">
+                                        <input type="radio" name="gTerm" id="graduationTerm1" value="Spring" checked ng-model="gTerm">Spring
+                                    </label>
+                                    <label class="radio inline">
+                                        <input type="radio" name="gTerm" id="graduationTerm2" value="Summer" ng-model="gTerm">Summer
+                                    </label>
+                                    <label class="radio inline">
+                                        <input type="radio" name="gTerm" id="graduationTerm3"  value="Fall" ng-model="gTerm">Fall
+                                    </label>
+                                </div> 
+                            </div>
+                            
+                            <p style="padding:10px;"></p>
+                            
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label>Exact Name of Degree Being Pursued:</label>
+                                    </br>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Degree" ng-model="Degree" id="Degree1" value="MA"> MA
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Degree" ng-model="Degree" id="Degree2" value="ME"> ME
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Degree" ng-model="Degree" id="Degree3" value="MS"> MS
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Degree" ng-model="Degree" id="Degree4" value="MPh"> MPh
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Degree" ng-model="Degree" id="Degree5" value="MTM"> MTM
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Degree" ng-model="Degree" id="Degree6" value="MBA"> MBA
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="Degree" ng-model="Degree" id="Degree7" value="EMBA"> EMBA
+                                    </label>
+                                </div>
+                            </div>
+
+                            <p style="padding:20px;"></p>
+                            
+                            <div class="row">
+                                <button type="" class="btn btn-primary btn-lg">Submit</button>       
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <p style="padding:20px;"></p>
+                <h3 style="font-size:16px; font-weight:bold;">Page1</h3>
+            </div>

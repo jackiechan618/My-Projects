@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <html ng-app="app">
+        <head>
+            <title><%= title %></title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Bootstrap -->
+            <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+            <link href="css/studyPlanStyle.css" rel="stylesheet">
+                <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+                <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+                <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+            <![endif]-->
+        </head>
+        <body>
+            
+        <p style="padding:5px;"></p>
+            
+        <div id="container" class="container">
+            <% if (success) { %>
+            <div class="alert alert-success">
+                <%= success %>
+            </div>
+            <% } %>
+            <% if (error) { %>
+            <div class="alert alert-danger">
+                <%= error %>
+            </div>
+            <% } %>
+            <%- body %>
+            <hr />
+        </div>
+            
+            
+    <footer class="row-footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+                    <h3>Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a style="font-size:16px; font-weight:bold;" href="/formPage1">Page1</a></li>
+                        <li><a style="font-size:16px; font-weight:bold;" href="/formPage2">Page2</a></li>
+                        <li><a style="font-size:16px; font-weight:bold;" href="/formPage3">Page3</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-5">                    
+                </div>
+                
+                <div class="col-xs-12 col-sm-4">
+                </div>
+                
+                <div class="col-xs-12">
+                    <p style="padding:10px;"></p>
+                    <p align="center">© Copyright 2016 Study Plan Creater</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+        </div>
+            
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="/javascripts/jquery-1.10.2.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="/javascripts/bootstrap.min.js"></script>
+<!--            <script src="framework/angular-ui-router.js"></script>-->
+            <script src="libs/angular/angular.js"></script>
+            <script src="js/app.js"></script>
+        </body>
+    </html>
