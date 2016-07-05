@@ -2,8 +2,8 @@ var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var os = require('os');
 
-var GOOGLE_CLIENT_ID = "319496493025-6ubs73aksadgmg9g15jta7doihchaod0.apps.googleusercontent.com";
-var GOOGLE_CLIENT_SECRET = "Mk5TkGkz4gJZzXpuSNEVXek3";
+var GOOGLE_CLIENT_ID = "XXX";
+var GOOGLE_CLIENT_SECRET = "XXX";
 
 
 global.serverIpaddr = "";
