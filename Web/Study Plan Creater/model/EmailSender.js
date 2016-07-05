@@ -18,8 +18,8 @@ function autoSendEmail(filePath, username, DestinationEmail){
         secureConnection: true, // use SSL
         port: 465, // port
         auth: {
-            user: 'studyplancreater518@gmail.com',
-            pass: 'studyplan2016518'
+            user: 'XXX',
+            pass: 'XXX'
         }
     }); 
     
@@ -48,7 +48,7 @@ function sendFeedback(firstName, lastName, areaCode, telnum, Email, contactMetho
             
     var mailOptions = {
         from: 'Study Plan Creater',
-        to: 'studyplancreater518@gmail.com',
+        to: 'XXX',
         subject: 'SSL Email',
         html: userFeedBackString
     }
@@ -58,8 +58,8 @@ function sendFeedback(firstName, lastName, areaCode, telnum, Email, contactMetho
         secureConnection: true, // use SSL
         port: 465, // port
         auth: {
-            user: 'studyplancreater518@gmail.com',
-            pass: 'studyplan2016518'
+            user: 'XXX',
+            pass: 'XXX'
         }
     }); 
     
