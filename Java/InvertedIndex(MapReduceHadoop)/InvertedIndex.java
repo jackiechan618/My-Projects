@@ -1,3 +1,9 @@
+/***************************************************************
+ * (1). Running on ubuntu Linux
+ * (2). Must install Hadoop first
+ * 
+ ***************************************************************/
+
 import java.io.IOException;
 import java.util.StringTokenizer;
 import org.apache.hadoop.conf.Configuration;
@@ -29,7 +35,6 @@ public class InvertedIndex {
                 context.write(keyInfo, valueInfo);
             }
         }
-        
     }
     
     public static class InvertedIndexCombiner extends Reducer<Text, Text, Text, Text> {
