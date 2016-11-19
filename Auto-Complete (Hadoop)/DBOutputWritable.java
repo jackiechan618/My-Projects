@@ -1,0 +1,48 @@
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.apache.hadoop.io.Writable;
+import org.apache.hadoop.mapreduce.lib.db.DBWritable;
+
+
+public class DBOutputWritable implements Writable, DBWritable {
+	private String starting_phrase;   // name of first column in mysql 
+	private String following_word;    // name of second column in mysql 
+	private int count;
+
+	public DBOutputWritable(String starting_phrase, String following_word, int count) {		
+		this.starting_phrase = starting_phrase;
+		this.following_word = following_word;
+		this.count = count;
+	}
+
+	@Override
+	public void readFields(ResultSet args0) throws SQLException {
+		starting_phrase = args0.getString(1);
+		following_word = args0.getString(2);
+		count = args0.getInt(3);
+	}
+
+	@Override
+	public void write(PreparedStatement args0) throws SQLException {
+		args0.setString(1, starting_phrase);
+		args0.setString(2, following_word);
+		args0.setInt(3, count);
+	}
+
+	@Override
+	public void readFields(DataInput arg0) throws IOException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void write(DataOutput arg0) throws IOException {
+		// TODO Auto-generated method stub
+
+	}
+}
