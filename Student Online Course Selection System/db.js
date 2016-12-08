@@ -1,6 +1,3 @@
-/**
- * Created by liu.xing on 14-1-23.
- */
 var settings = require('./settings');
 var Db = require('mongodb').Db;
 var Connection = require('mongodb').Connection;

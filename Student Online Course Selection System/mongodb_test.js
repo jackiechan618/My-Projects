@@ -1,6 +1,3 @@
-/**
- * Created by liu.xing on 14-1-22.
- */
 var MongoClient = require('mongodb').MongoClient
     , format = require('util').format;
 
